@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    text-align: center;
+    direction: rtl; /* For Arabic */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #009688;
+    color: white;
+}
+
+.balance h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.stats div {
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.circular-progress-container {
+    margin: 30px auto;
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+
+.circular-progress {
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    border: 3px solid #009688;
+}
+
+.progress {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.timer {
+    font-size: 30px;
+    margin-top: 0;
+    color: #ffbb00;
+}
+
+.buttons-container {
+    margin: 20px 0;
+}
+
+.start-timer, .withdraw-button {
+    background-color: #ffbb00;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.start-timer:hover, .withdraw-button:hover {
+    background-color: #e6a600;
+}
+
+.withdraw-button {
+    background-color: #007bff; /* Blue color for the button */
+}
+
+.news-ticker {
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 80%;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Hide overflowing content */
+    white-space: nowrap; /* Prevent line breaks */
+    position: relative;
+}
+
+.news-ticker span {
+    display: inline-block;
+    padding-right: 100%; /* Space for scrolling */
+    animation: scroll 10s linear infinite; /* Adjust speed as needed */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move completely out of view to the left */
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: #ffbb00;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.menu-item {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+
+/* نافذة إدخال الكود */
+.code-prompt {
+    display: none; /* مخفي بشكل افتراضي */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 300px;
+    text-align: center;
+}
+
+.code-prompt h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.code-prompt input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.code-prompt button {
+    background-color: #009688;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.code-prompt button:hover {
+    background-color: #00796b;
+}
+
+/* رسالة الخطأ */
+.error-msg {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* تصميم الكرات */
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ffbb00; /* لون الكرة */
+}
+
+.ball1 { width: 20px; height: 20px; top: 0; left: 50%; transform: translateX(-50%); animation: orbit 9s linear infinite; }
+.ball2 { width: 20px; height: 20px; top: 10%; left: 0; transform: translateX(-50%); animation: orbit 9s linear infinite; animation-delay: 1s; }
+.ball3 { width: 20px; height: 20px; top: 50%; left: 100%; transform: translateX(-50%); animation: orbit 9s linear infinite; animation-delay: 2s; }
+.ball4 { width: 20px; height: 20px; top: 90%; left: 50%; transform: translateX(-50%); animation: orbit 9s linear infinite; animation-delay: 3s; }
+.ball5 { width: 20px; height: 20px; top: 50%; left: 0; transform: translateX(-50%); animation: orbit 9s linear infinite; animation-delay: 4s; }
+.ball6 { width: 20px; height: 20px; top: 10%; left: 100%; transform: translateX(-50%); animation: orbit 9s linear infinite; animation-delay: 5s; }
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translate(100px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translate(100px) rotate(-360deg);
+    }
+}

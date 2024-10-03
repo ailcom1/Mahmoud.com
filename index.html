@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> <!-- منع التكبير والتصغير -->
+    <link rel="stylesheet" href="styles.css">
+    <title>عداد تنازلي</title>
+</head>
+<body>
+    <div class="header">
+        <div class="balance">
+            <h2>الرصيد: <span id="balance">0.00</span> دولار</h2>
+        </div>
+        <div class="stats">
+            <div>مجموع النقاط: <span id="points">0</span></div>
+            <div>مجموع الجواهر: <span id="gems">0</span></div>
+        </div>
+    </div>
+
+    <div class="circular-progress-container">
+        <div class="circular-progress">
+            <div class="progress">
+                <div class="timer" id="timer">9</div>
+                <div class="ball ball1"></div>
+                <div class="ball ball2"></div>
+                <div class="ball ball3"></div>
+                <div class="ball ball4"></div>
+                <div class="ball ball5"></div>
+                <div class="ball ball6"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons-container">
+        <button class="start-timer" id="startBtn">بدء العد</button>
+        <button class="withdraw-button" id="withdrawBtn" onclick="openTelegram()">سحب أرباح</button>
+    </div>
+
+    <div class="news-ticker" id="newsTicker">
+        <span>آخر الأخبار: ترقبوا مفاجآت جديدة قريبًا!</span>
+    </div>
+
+    <div class="menu">
+        <div class="menu-item">إعدادات</div>
+    </div>
+
+    <!-- نافذة إدخال الكود -->
+    <div class="code-prompt" id="codePrompt" style="display: none;">
+        <h2>أدخل كود التفعيل</h2>
+        <input type="text" id="activationCode" placeholder="أدخل الكود هنا" oninput="updateExpirationDisplay()">
+        <button onclick="verifyCode()">موافق</button>
+        <p id="errorMsg" class="error-msg"></p>
+        <p id="expirationDisplay" class="expiration-display"></p> <!-- عنصر لعرض مدة الصلاحية -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
